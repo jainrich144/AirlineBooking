@@ -1,10 +1,36 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Getting Started: Serving Web Content</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Getting Started: Serving Web Content for TWAirline</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<p th:text = "'Welcome to TWAirline'"/>
+
+<p th:text="'Welcome to TWAirline'"/>
+
+<form action="search" method="post">
+
+    <!-- Source City -->
+    <p th:text="'Source'"></p>
+    <select name="fromCityId">
+        <option th:each="city : ${cityList}" th:value="${city.id}" th:text="${city.name}"/>
+    </select>
+
+    <!-- Destination City -->
+    <p th:text="'Destination'"></p>
+    <select name="toCityId">
+        <option th:each="city : ${cityList}" th:value="${city.id}" th:text="${city.name}"/>
+    </select>
+
+    <!-- Number of Seats Needed -->
+    <p th:text="'No.of Passengers'"></p>
+    <select name="numSeats">
+        <option th:each="i : ${#numbers.sequence(1,10)}" th:value="${i}" th:text="${i}"/>
+    </select>
+
+
+    <input type="submit" value="Search"/>
+</form>
+
 </body>
 </html>
