@@ -8,7 +8,7 @@
 
 <p th:text="'Welcome to TWAirline'"/>
 
-<form action="search" method="post">
+<form th:action="@{/search}" th:object="${searchCriteria}" method="post">
 
     <!-- Source City -->
     <p th:text="'Source'"></p>
@@ -22,12 +22,22 @@
         <option th:each="city : ${cityList}" th:value="${city.id}" th:text="${city.name}"/>
     </select>
 
+    <p th:text="'Travel Class'"></p>
+    <select name="travelClassName">
+        <option th:each="travelClassName : ${T(airline.model.TravelClass.TravelClassName).values()}"
+                th:value="${travelClassName}"
+                th:text="${travelClassName}" />
+    </select>
+
     <!-- Number of Seats Needed -->
     <p th:text="'No.of Passengers'"></p>
-    <select name="numSeats">
+    <select name="seatsNeeded">
         <option th:each="i : ${#numbers.sequence(1,10)}" th:value="${i}" th:text="${i}"/>
     </select>
 
+    <!--Departure Date -->
+    <p th:text="'Departure Date'"></p>
+    <input type="date"  name="departureDate" th:min="${departureDate}" />
 
     <input type="submit" value="Search"/>
 </form>

@@ -14,18 +14,23 @@ table, th, td {
 <table>
     <caption>RESULTS : SEARCH FLIGHTS LIST</caption>
     <tr>
-        <td>Flight No#</td>
-        <td>Source City</td>
-        <td>Destination City</td>
-        <td>Available Seats</td>
+        <th>Flight No#</th>
+        <th>Source City</th>
+        <th>Destination City</th>
+        <th>Travel Class</th>
+        <th>Available Seats</th>
+        <th>Fare</th>
 
     </tr>
-<th:block th:each="flight : ${flights}">
+<th:block th:each="flightx : ${resultFlights}">
     <tr>
-        <td th:text="${flight.flightNo}"/>
-        <td th:text="${flight.sourceCityId}"/>
-        <td th:text="${flight.destinationCityId}"/>
-        <td th:text="${flight.availableSeats}"/>
+        <td th:text="${flightx.flightNo}"/>
+        <td th:text="${flightx.sourceCityId}"/>
+        <td th:text="${flightx.destinationCityId}"/>
+        <td th:text="${flightx.travelClassName}"/>
+        <td th:text="${flightx.numSeats}"/>
+        <td th:text="${flightx.totalFare}"/>
+
     </tr>
 </th:block>
     </table>

@@ -1,6 +1,6 @@
 package airline.model;
 
-public class Plane {
+public class AirPlane{
     String planeName;
     int planeCapacity;
 
