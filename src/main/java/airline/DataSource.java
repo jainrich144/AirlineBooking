@@ -49,7 +49,7 @@ public class DataSource {
         f1 = new FlightInformation("BA1124", "HYD", "MUM", LocalDate.of(2017,9,17), travelClass);
         flightList.add(f1);
 
-        f1 = new FlightInformation("BA1125", "HYD", "PUN", LocalDate.of(2017,9,17), travelClass);
+        f1 = new FlightInformation("BA1125", "HYD", "PUN", LocalDate.of(2017,9,10), travelClass);
         flightList.add(f1);
 
         //trClass[TravelClass.TravelClassName.Economy]= new TravelClass(TravelClass.TravelClassName.Economy,20,10);

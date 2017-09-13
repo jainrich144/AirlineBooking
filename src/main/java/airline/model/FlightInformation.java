@@ -18,7 +18,6 @@ public class FlightInformation {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate departDate;
 
-
     public boolean checkSeatsByTravelClass(String travelClassName, int seatsNeeded){
         int availableSeats = 0;
 
